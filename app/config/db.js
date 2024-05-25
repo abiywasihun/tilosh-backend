@@ -12,7 +12,7 @@ const sequelize = new Sequelize('tilosh', 'postgres', 'postgres@1234', {
 //   host: 'localhost',
 //   dialect: 'postgres'
 // });
-const sequelize = new Sequelize(POSTGRES_URL);
+// const sequelize = new Sequelize(POSTGRES_URL);
 
 async function connectDB() {
     try {
