@@ -3,7 +3,7 @@ const { Sequelize, DataTypes } = require("sequelize");
 
 const POSTGRES_URL = process.env.DATABASE_URL;
 //For production development
-const sequelize = new Sequelize('tilosh', 'postgres', 'postgres@1234', {
+const sequelize = new Sequelize('tilosh', 'tilosh', 'tilsoh@1234', {
   host: 'localhost',
   dialect: 'postgres'
 });
