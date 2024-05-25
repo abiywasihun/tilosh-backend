@@ -7,7 +7,7 @@ const path = require( 'path' );
 module.exports.getConfig = () => {
     const config = {
         'MODE': process.env.NODE_ENV,
-        'PORT': process.env.PORT || 8080,
+        'PORT': process.env.PORT || 8081,
         'POSTGRES_URL': process.env.DATABASE_URL,
     };
 
