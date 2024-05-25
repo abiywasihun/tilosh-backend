@@ -2,11 +2,17 @@ require("dotenv").config();
 const { Sequelize, DataTypes } = require("sequelize");
 
 const POSTGRES_URL = process.env.DATABASE_URL;
-const sequelize = new Sequelize('tilosh', 'postgres', 'postgres', {
+//For production development
+const sequelize = new Sequelize('tilosh', 'postgres', 'postgres@1234', {
   host: 'localhost',
   dialect: 'postgres'
 });
-// const sequelize = new Sequelize(POSTGRES_URL);
+//For local development
+// const sequelize = new Sequelize('tilosh', 'postgres', 'postgres', {
+//   host: 'localhost',
+//   dialect: 'postgres'
+// });
+const sequelize = new Sequelize(POSTGRES_URL);
 
 async function connectDB() {
     try {
