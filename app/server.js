@@ -16,7 +16,7 @@ server.listen( PORT ).on( 'error', ( err ) => {
 } ).on( 'listening', async() => {
     console.log( ' Application Started' );
     await connectDB();
-    sequelize.sync({ force: false }).then(() => {
+    sequelize.sync({ force: true }).then(() => {
         console.log("Database Connected Successfully");
     });
 } );
