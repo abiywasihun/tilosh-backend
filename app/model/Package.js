@@ -14,6 +14,10 @@ const PackageModel = sequelize.define("package", {
         type: DataTypes.STRING(100),
         allowNull: false,
     },
+    category: {
+        type: DataTypes.STRING(100),
+        allowNull: false,
+    },
     description: {
         type: DataTypes.TEXT,
         allowNull: true,

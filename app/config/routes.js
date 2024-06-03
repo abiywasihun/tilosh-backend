@@ -5,6 +5,8 @@ const path = require( 'path' );
 const userRouter = require("../routes/user.route");
 const productRouter = require("../routes/product.route");
 const packageRouter = require("../routes/package.route");
+const cartRouter = require("../routes/cart.route");
+const budgetRouter = require("../routes/budget.route");
 
 module.exports.setRoutes = ( app ) => {
 
@@ -20,6 +22,8 @@ module.exports.setRoutes = ( app ) => {
     app.use("/api/users", userRouter);
     app.use("/api/products", productRouter);
     app.use("/api/packages", packageRouter);
+    app.use("/api/carts", cartRouter);
+    app.use("/api/budgets", budgetRouter); 
     // require("../app/routes/song")(app);
     // require("../app/routes/signUp")(app);
 	// require("../app/routes/signIn")(app);

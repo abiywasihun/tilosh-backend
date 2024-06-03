@@ -1,6 +1,6 @@
 const { sequelize, DataTypes } = require( "../config/db");
 
-const ProductModel = sequelize.define("product", {
+const CartModel = sequelize.define("carts", {
     id: {
         type: DataTypes.UUID,
         defaultValue: DataTypes.UUIDV4,
@@ -10,30 +10,13 @@ const ProductModel = sequelize.define("product", {
         type: DataTypes.STRING(100),
         allowNull: false,
     },
-    productName: {
+    productId: {
         type: DataTypes.STRING(100),
         allowNull: false,
     },
-    category: {
+    status: {
         type: DataTypes.STRING(100),
         allowNull: false,
-    },
-    description: {
-        type: DataTypes.TEXT,
-        allowNull: true,
-    },
-    price: {
-        type: DataTypes.STRING(100),
-        allowNull: false,
-        unique: true,
-    },
-    productType: {
-        type: DataTypes.STRING(100),
-        allowNull: false,
-    },
-    medias: {
-        type: DataTypes.TEXT,
-        allowNull: true,
     },
     createdAt: {
         type: DataTypes.DATE,
@@ -47,5 +30,5 @@ const ProductModel = sequelize.define("product", {
     },
 });
 
-module.exports= ProductModel;
+module.exports= CartModel;
 
