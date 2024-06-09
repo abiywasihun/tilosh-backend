@@ -145,7 +145,7 @@ const findAllPackagesController = async (req, res) => {
 
         res.status(200).json({
             status: "success",
-            results: users.length,
+            results: packages.length,
             packages,
         });
     } catch (error) {

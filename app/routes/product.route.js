@@ -1,7 +1,8 @@
 const express = require( 'express' );
 const { createProductController,findProductController, 
 findAllProductsController,updateProductController,
-deleteProductController, findProductByUserController }  = require("../controller/product.controller");
+deleteProductController, findProductByCategoryController,
+findProductByUserController }  = require("../controller/product.controller");
 
 const multer = require('multer');
 const { v4: uuidv4 } = require('uuid');
@@ -31,6 +32,10 @@ router
 router
     .route("/user")
     .post(findProductByUserController);
+
+router
+    .route("/category")
+    .post(findProductByCategoryController);
 
 router
     .route("/:userId")

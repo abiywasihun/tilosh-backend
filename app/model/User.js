@@ -17,7 +17,7 @@ const UserModel = sequelize.define("users", {
     },
     emailStatus: {
         type: DataTypes.STRING(100),
-        allowNull: false,
+        allowNull: true,
     },
     userType: {
         type: DataTypes.STRING(100),
@@ -29,7 +29,7 @@ const UserModel = sequelize.define("users", {
     },
     organizationName: {
         type: DataTypes.STRING(100),
-        allowNull: false,
+        allowNull: true,
     },
     tagline: {
         type: DataTypes.TEXT,
@@ -37,7 +37,7 @@ const UserModel = sequelize.define("users", {
     },
     industry: {
         type: DataTypes.TEXT,
-        allowNull: false,
+        allowNull: true,
     },
     about: {
         type: DataTypes.TEXT,

@@ -134,6 +134,35 @@ const findProductByUserController = async (req , res) => {
     }
 };
 
+const findProductByCategoryController = async (req , res) => {
+    try {
+        const { category } = req.body
+        const product = await ProductModel.findAll({
+              where: { 
+                category
+                }});
+
+        if(!product) {
+            return res.status(404).json({
+                status: "fail",
+                message: "product not found",
+            });
+        }
+
+        res.status(200).json({
+            status: "success",
+            data: {
+                product,
+            },
+        });
+    } catch (error) {
+        res.status(500).json({
+            status: "error",
+            message: error.message,
+        });
+    }
+};
+
 // get all blogs
 const findAllProductsController = async (req, res) => {
     try {
@@ -145,7 +174,7 @@ const findAllProductsController = async (req, res) => {
 
         res.status(200).json({
             status: "success",
-            results: users.length,
+            results: products.length,
             products,
         });
     } catch (error) {
@@ -181,4 +210,6 @@ const deleteProductController = async (req , res) => {
     }
 };
 
-module.exports={createProductController,findProductController, findProductByUserController, findAllProductsController,updateProductController,deleteProductController}
+module.exports={createProductController,findProductController, findProductByUserController,
+ findAllProductsController, findProductByCategoryController, updateProductController,
+ deleteProductController}
